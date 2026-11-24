@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it"><head><meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,noai,noimageai"><meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Last War — Guide</title><style>
+:root{--carta:#fbf8f2;--inchiostro:#22201c;--tenue:#6b665c;--riga:#e4ddd0;--accento:#b3541e;--accento2:#1f5f8b;
+--fianco:#f2ede3;--codice:#efe9dd;--evid:#fff3c4;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-tema="chiaro"]){--carta:#17181b;--inchiostro:#e8e4dc;--tenue:#a39d91;
+--riga:#2e3036;--accento:#e08a4f;--accento2:#7db6de;--fianco:#1e2024;--codice:#25272c;--evid:#4a3f12;color-scheme:dark}}
+:root[data-tema="scuro"]{--carta:#17181b;--inchiostro:#e8e4dc;--tenue:#a39d91;--riga:#2e3036;--accento:#e08a4f;
+--accento2:#7db6de;--fianco:#1e2024;--codice:#25272c;--evid:#4a3f12;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--carta);color:var(--inchiostro);font:17px/1.65 Georgia,"Iowan Old Style","Palatino Linotype",serif}
+a{color:var(--accento2)}a:hover{color:var(--accento)}
+.guscio{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}
+nav.fianco{background:var(--fianco);border-right:1px solid var(--riga);padding:18px 14px 40px;position:sticky;top:0;height:100vh;overflow:auto;
+font:14px/1.4 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+nav.fianco .marchio{display:block;font:700 17px/1.25 Georgia,serif;color:var(--inchiostro);text-decoration:none;margin-bottom:10px}
+nav.fianco input{width:100%;padding:8px 10px;border:1px solid var(--riga);border-radius:8px;background:var(--carta);color:var(--inchiostro);font:inherit;margin-bottom:6px}
+#risultati{margin:4px 0 12px}#risultati a{display:block;padding:5px 6px;border-radius:6px;text-decoration:none;color:var(--inchiostro)}
+#risultati a:hover{background:var(--evid)}#risultati small{display:block;color:var(--tenue)}
+nav.fianco h4{margin:16px 0 4px;color:var(--tenue);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+nav.fianco ol{list-style:none;margin:0;padding:0}nav.fianco li a{display:block;padding:4px 8px;border-radius:6px;color:var(--inchiostro);text-decoration:none}
+nav.fianco li a:hover{background:var(--riga)}nav.fianco li a.qui{background:var(--accento);color:#fff}
+main{padding:28px clamp(16px,5vw,64px) 80px;max-width:900px;width:100%}
+main{min-width:0;overflow-wrap:break-word;hyphens:auto}
+.occhiello{font:13px/1.4 -apple-system,Helvetica,Arial,sans-serif;color:var(--tenue);text-transform:uppercase;letter-spacing:.06em}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:.2em 0 .3em}
+h2{font-size:25px;margin:1.8em 0 .5em;padding-bottom:.2em;border-bottom:2px solid var(--riga)}
+h3{font-size:20px;margin:1.4em 0 .4em}h4{font-size:17px;margin:1.2em 0 .3em}
+.dati{font:13px/1.5 -apple-system,Helvetica,Arial,sans-serif;color:var(--tenue);margin-bottom:18px}
+.dati span{display:inline-block;background:var(--fianco);border:1px solid var(--riga);border-radius:20px;padding:1px 10px;margin:0 6px 6px 0}
+.sommario{background:var(--fianco);border:1px solid var(--riga);border-radius:10px;padding:12px 18px;margin:0 0 24px;font:14px/1.6 -apple-system,Helvetica,Arial,sans-serif}
+.sommario b{display:block;margin-bottom:4px}.sommario a{text-decoration:none}.sommario .l3{padding-left:16px;font-size:13px}
+figure{margin:22px 0;text-align:center}figure img{max-width:100%;max-height:560px;border-radius:8px;border:1px solid var(--riga);background:#fff}
+figcaption{font:14px/1.4 -apple-system,Helvetica,Arial,sans-serif;color:var(--tenue);margin-top:6px}
+img.in-riga{height:1.4em;vertical-align:middle}
+.tabella{overflow-x:auto;margin:16px 0}table{border-collapse:collapse;width:100%;font:15px/1.45 -apple-system,Helvetica,Arial,sans-serif}
+th,td{border:1px solid var(--riga);padding:6px 9px;text-align:left;vertical-align:top}th{background:var(--fianco)}
+tr:nth-child(even) td{background:color-mix(in srgb,var(--fianco) 45%,transparent)}
+blockquote{margin:16px 0;padding:8px 16px;border-left:4px solid var(--accento);background:var(--fianco);border-radius:0 8px 8px 0}
+code{background:var(--codice);padding:1px 5px;border-radius:4px;font-size:.88em}
+pre{background:var(--codice);padding:12px;border-radius:8px;overflow-x:auto}pre code{background:none;padding:0}
+sup.rif{font:11px -apple-system,Helvetica,Arial,sans-serif}sup.rif a{text-decoration:none}
+li:target{background:var(--evid)}
+.sfoglia{display:flex;justify-content:space-between;gap:12px;margin-top:48px;border-top:1px solid var(--riga);padding-top:16px;
+font:15px/1.4 -apple-system,Helvetica,Arial,sans-serif}
+.sfoglia a{flex:1;padding:10px 14px;border:1px solid var(--riga);border-radius:10px;text-decoration:none;color:var(--inchiostro)}
+.sfoglia a:hover{border-color:var(--accento)}.sfoglia a small{display:block;color:var(--tenue)}.sfoglia .dopo{text-align:right}
+.copertina{padding:30px 0 10px}.copertina h1{font-size:clamp(34px,6vw,56px)}.copertina p.sotto{font-size:20px;color:var(--tenue)}
+.parti{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:24px}
+.parte{border:1px solid var(--riga);border-radius:12px;padding:14px 16px;background:var(--fianco)}
+.parte h3{margin:0 0 8px}.parte ol{margin:0;padding-left:20px;font:15px/1.6 -apple-system,Helvetica,Arial,sans-serif}
+.barra{display:flex;gap:6px;margin:6px 0 10px}.barra button{flex:1;font:12px -apple-system,Helvetica,Arial,sans-serif;padding:5px;border:1px solid var(--riga);
+border-radius:6px;background:var(--carta);color:var(--inchiostro);cursor:pointer}
+#apri{display:none}
+@media (max-width:860px){.guscio{grid-template-columns:minmax(0,1fr)}nav.fianco{position:fixed;inset:0 25% 0 0;z-index:5;transform:translateX(-105%);transition:transform .2s;height:100vh}
+nav.fianco.aperto{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}#apri{display:inline-block;position:sticky;top:8px;z-index:4;margin:8px 0 0 12px;
+font:14px -apple-system,Helvetica,Arial,sans-serif;padding:7px 12px;border-radius:8px;border:1px solid var(--riga);background:var(--fianco);color:var(--inchiostro)}
+main{padding-top:12px}}
+@media print{nav.fianco,#apri,.sfoglia{display:none}.guscio{display:block}}
+
+nav.fianco .lingue{display:flex;gap:4px;margin:0 0 10px}nav.fianco .lingue a{flex:1;text-align:center;font-size:18px;padding:3px 0;
+border:1px solid var(--riga);border-radius:6px;text-decoration:none;filter:grayscale(.6);opacity:.75}
+nav.fianco .lingue a.qui,nav.fianco .lingue a:hover{filter:none;opacity:1;border-color:var(--accento)}
+.avviso{background:var(--evid);border-radius:8px;padding:8px 14px;margin:0 0 18px;font:14px/1.5 -apple-system,Helvetica,Arial,sans-serif}
+.scelta{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center}
+.scelta h1{font-size:clamp(30px,6vw,52px);margin:.1em 0 .2em}.scelta p{color:var(--tenue);margin:0 0 28px}
+.scelta .tasti{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;width:min(920px,100%)}
+.scelta .tasti a{display:block;padding:20px 12px;border:1px solid var(--riga);border-radius:14px;background:var(--fianco);text-decoration:none;
+color:var(--inchiostro);font:600 18px/1.3 -apple-system,Helvetica,Arial,sans-serif}
+.scelta .tasti a span{display:block;font-size:40px;margin-bottom:6px}.scelta .tasti a small{display:block;font-weight:400;color:var(--tenue);margin-top:4px;font-size:13px}
+.scelta .tasti a:hover{border-color:var(--accento);transform:translateY(-2px)}
+
+.dedica{margin-top:42px;display:flex;align-items:center;gap:18px;padding:18px 28px;border-radius:999px;
+background:linear-gradient(135deg,color-mix(in srgb,#ff7a3d 14%,var(--fianco)),color-mix(in srgb,#b5179e 12%,var(--fianco)));
+border:1px solid color-mix(in srgb,#e63946 35%,var(--riga));box-shadow:0 10px 30px -14px rgba(230,57,70,.55)}
+.dedica .cuore{width:46px;height:42px;flex:none;animation:battito 1.6s ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(230,57,70,.45))}
+@keyframes battito{0%,100%{transform:scale(1)}14%{transform:scale(1.16)}28%{transform:scale(1)}42%{transform:scale(1.1)}70%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.dedica .cuore{animation:none}}
+.dedica-testo{display:flex;flex-direction:column;text-align:left;line-height:1.25}
+.dedica .made{font:italic 15px/1.3 Georgia,serif;color:var(--tenue)}
+.dedica .alleanza{font:800 clamp(20px,3.4vw,26px)/1.2 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:.02em;
+background:linear-gradient(90deg,#ff7a3d,#e63946 55%,#b5179e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dedica .autore{font:13px/1.4 -apple-system,Helvetica,Arial,sans-serif;color:var(--tenue);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.dedica .autore b{color:var(--inchiostro);text-transform:none;letter-spacing:.02em;font-size:15px}
+@media (max-width:520px){.dedica{border-radius:20px;padding:16px 18px;gap:14px;margin-top:28px}.scelta{justify-content:flex-start;padding-top:32px}.scelta p{font-size:15px;margin-bottom:20px}.scelta .tasti{grid-template-columns:repeat(2,1fr);gap:10px}.scelta .tasti a{padding:12px 8px;font-size:16px}.scelta .tasti a span{font-size:28px;margin-bottom:2px}.scelta .tasti a small{font-size:12px}.scelta .tasti a:last-child{grid-column:1/-1}}
+</style></head>
+<body><div class="scelta"><div class="occhiello">📘 Last War: Survival</div><h1>Last War</h1>
+<p>Scegli la lingua · Choose your language · Elige tu idioma · Choisissez votre langue · Sprache wählen</p><div class="tasti"><a href="it/index.html" lang="it"><span>🇮🇹</span>Italiano<small>Last War: la guida completa</small></a><a href="en/index.html" lang="en"><span>🇬🇧</span>English<small>Last War: the complete guide</small></a><a href="es/index.html" lang="es"><span>🇪🇸</span>Español<small>Last War: la guía completa</small></a><a href="fr/index.html" lang="fr"><span>🇫🇷</span>Français<small>Last War : le guide complet</small></a><a href="de/index.html" lang="de"><span>🇩🇪</span>Deutsch<small>Last War: der komplette Leitfaden</small></a></div><div class="dedica">
+<svg class="cuore" viewBox="0 0 32 29" aria-hidden="true"><defs><linearGradient id="fiamma" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#ff7a3d"/><stop offset=".55" stop-color="#e63946"/><stop offset="1" stop-color="#b5179e"/></linearGradient></defs>
+<path fill="url(#fiamma)" d="M16 28.5 13.7 26.4C5.6 19 .3 14.2.3 8.3.3 3.5 4.1-.3 8.9-.3c2.7 0 5.3 1.3 7.1 3.3C17.8 1 20.4-.3 23.1-.3c4.8 0 8.6 3.8 8.6 8.6 0 5.9-5.3 10.7-13.4 18.1L16 28.5z"/></svg>
+<div class="dedica-testo"><span class="made">Made with love for</span>
+<span class="alleanza">RISE: Rising Flames</span>
+<span class="autore">By <b>robypsyko</b></span></div></div></div>
+<script>(function(){var t=null;try{t=localStorage.getItem('libro-tema')}catch(e){}if(t)document.documentElement.setAttribute('data-tema',t)})();</script>
+<script src="serratura.js"></script></body></html>
